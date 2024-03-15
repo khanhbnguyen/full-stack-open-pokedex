@@ -4,7 +4,7 @@ THIS IS TO TEST CI FOR BRANCHES PER EXERCISE 11.13!
 
 TESTING DEPLOY ONLY ON MERGE!
 
-TESTING VERSIONING!
+TESTING VERSIONING 2!
 
 This repository is used for the CI/CD module of the Full stack open course
 
