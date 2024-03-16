@@ -26,6 +26,7 @@ jobs:
         if: failure()
         with:
           severity: error
+          description:
           details: Build Failed!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Deploy on fly.io
@@ -38,6 +39,7 @@ jobs:
         if: ${{ github.event_name == 'push' && success() }}
         with:
           severity: info
+          description:
           details: Deploy Succeeded!
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
           
