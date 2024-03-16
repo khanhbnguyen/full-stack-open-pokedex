@@ -21,13 +21,15 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Set the environment variable
+        run: echo REPOSITORY_NAME=${GITHUB_REPOSITORY#*\/} >> $GITHUB_ENV
       - name: Build Failure
         uses: rjstone/discord-webhook-notify@v1
         if: failure()
         with:
           severity: error
           text: Build failed
-          details: commit ${{ github.event.commits[0].url }} by ${{ github.event.commits[0].author.username }} broke the build :(
+          details: ${{ join(join(join('commit ', github.event.commits[0].url), join(' by ', github.event.commits[0].author.username)), ' broke the build :(') }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Deploy on fly.io
         if: ${{ github.event_name == 'push' && contains(join(toJson(github.event.commits.*.message)), '#skip') == false }}
