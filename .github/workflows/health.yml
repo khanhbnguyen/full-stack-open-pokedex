@@ -2,7 +2,7 @@ name: Health check
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   test_schedule:
@@ -28,7 +28,7 @@ jobs:
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Health check success
         uses: rjstone/discord-webhook-notify@v1
-        if: ${{ github.event_name == 'push' && success() }}
+        if: success()
         with:
           severity: info
           text: Deploy health check succeeded
