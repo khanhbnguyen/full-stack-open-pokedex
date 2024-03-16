@@ -9,7 +9,7 @@ const PokemonList = ({ pokemonList }) => {
           <div
             className="list-item-name"
           >
-            {namesies}
+            {name}
           </div>
         </Link>
       ))}
@@ -17,4 +17,4 @@ const PokemonList = ({ pokemonList }) => {
   )
 }
 
-export default PokemonList
+export defaultERROR PokemonList
