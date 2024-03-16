@@ -1,8 +1,12 @@
 name: Health check
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
+  # on main since schedule tested successfully and no longer needed
+  push:
+    branches:
+      - main
+  # schedule:
+  #   - cron: '*/5 * * * *'
 
 jobs:
   test_schedule:
