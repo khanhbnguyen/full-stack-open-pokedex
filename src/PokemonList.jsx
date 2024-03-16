@@ -17,4 +17,4 @@ const PokemonList = ({ pokemonList }) => {
   )
 }
 
-export defaultERROR PokemonList
+export default PokemonList
