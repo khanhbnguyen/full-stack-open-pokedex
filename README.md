@@ -1,5 +1,7 @@
 # Full Stack open CI/CD
 
+https://khanhbnguyen-full-stack-open-pokedex.fly.dev/
+
 THIS IS TO TEST CI FOR BRANCHES PER EXERCISE 11.13!
 
 TESTING DEPLOY ONLY ON MERGE!
